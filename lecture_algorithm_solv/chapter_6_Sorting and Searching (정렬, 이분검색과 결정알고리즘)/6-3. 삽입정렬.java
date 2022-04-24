@@ -8,14 +8,15 @@ public class Main {
 		
 		for (int i = 1; i < n; i++) {
 			int temp = arr[i];
-			for (int j = i-1; j >= 0; j--) {
+			int j = 0;
+			for (j = i-1; j >= 0; j--) {
 				if (arr[j] > temp) {
-					arr[j+1] = arr[j];
-					arr[j] = temp;
+					arr[j+1] = arr[j]; //뒤로 밀어주기
 				} else {
 					break;
 				}
 			}
+			arr[j+1] = temp; //비교 기준값 삽입
 		}
 		
 		
